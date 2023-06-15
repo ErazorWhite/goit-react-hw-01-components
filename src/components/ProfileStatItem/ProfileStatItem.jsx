@@ -5,7 +5,7 @@ const ProfileStatItem = ({ statName, stat }) => {
   return (
     <Item>
       <Label>{statName}</Label>
-      <Quantity>{stat}</Quantity>
+      <Quantity>{stat.toLocaleString()}</Quantity>
     </Item>
   );
 };

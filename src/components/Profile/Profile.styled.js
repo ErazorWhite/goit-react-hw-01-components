@@ -10,9 +10,8 @@ export const ProfileCard = styled.div`
 `;
 
 export const ProfileDescription = styled.div`
-  padding: 30px 40px 0;
+  padding: 30px 40px 20px 40px;
   color: black;
-  padding-bottom: 30px;
 `;
 
 export const ProfilePicture = styled.img`
