@@ -8,12 +8,10 @@ export const Item = styled.li`
   padding: 20px 0;
 
   border-left: solid;
-  border-right: solid;
   border-color: var(--border-color);
 
-  &:first-child,
-  &:last-child {
-    border: transparent;
+  &:first-child {
+    border-left: transparent;
   }
 `;
 
