@@ -1,7 +1,7 @@
 import userData from 'json/user';
 import stats from 'json/data';
 import friends from 'json/friends';
-import items from 'json/transactions.json';
+import transactions from 'json/transactions.json';
 
 import { Container } from 'components/App/App.styled';
 
@@ -15,7 +15,7 @@ export default function App() {
   return (
     <Container>
       <Section title="1 - Профиль социальной сети">
-        <Profile {...userData} />
+        <Profile {...userData} /> 
       </Section>
 
       <Section title="2 - Секция статистики">
@@ -27,7 +27,7 @@ export default function App() {
       </Section>
 
       <Section title="4 - История транзакций">
-        <TransactionHistory items={items}></TransactionHistory>
+        <TransactionHistory items={transactions}></TransactionHistory>
       </Section>
     </Container>
   );
