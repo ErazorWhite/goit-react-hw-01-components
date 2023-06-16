@@ -1,26 +1,33 @@
-const Statistics = ({title, stats}) => {
-  <section class="statistics">
-    {title && <h2 class="title">{title}</h2>}
+import { StatsTitle, StatsList, StatItem, StatSpan } from './Statistics.styled';
 
-    <ul class="stat-list">
-      <li class="item">
-        <span class="label">.docx</span>
-        <span class="percentage">4%</span>
-      </li>
-      <li class="item">
-        <span class="label">.mp3</span>
-        <span class="percentage">14%</span>
-      </li>
-      <li class="item">
-        <span class="label">.pdf</span>
-        <span class="percentage">41%</span>
-      </li>
-      <li class="item">
-        <span class="label">.mp4</span>
-        <span class="percentage">12%</span>
-      </li>
-    </ul>
-  </section>;
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+const Statistics = ({ title, stats }) => {
+  return (
+    <section>
+      {title && <StatsTitle>{title}</StatsTitle>}
+
+      <StatsList>
+        {stats.map(stat => {
+          return (
+            <>
+              <StatItem key={stat.id} color={getRandomColor()}>
+                <StatSpan margin="0 0 8px 0">{stat.label}</StatSpan>
+                <StatSpan>{stat.percentage}</StatSpan>
+              </StatItem>
+            </>
+          );
+        })}
+      </StatsList>
+    </section>
+  );
 };
 
 export default Statistics;
