@@ -17,14 +17,12 @@ const Statistics = ({ title, stats }) => {
       {title && <StatsTitle>{title}</StatsTitle>}
 
       <StatsList>
-        {stats.map(stat => {
+        {stats.map(({ id, label, percentage }) => {
           return (
-            <>
-              <StatItem key={stat.id} bgcolor={getRandomColor()}>
-                <StatSpan margin="0 0 8px 0">{stat.label}</StatSpan>
-                <StatSpan>{stat.percentage}</StatSpan>
-              </StatItem>
-            </>
+            <StatItem key={id} bgcolor={getRandomColor()}>
+              <StatSpan margin="0 0 8px 0">{label}</StatSpan>
+              <StatSpan>{percentage}</StatSpan>
+            </StatItem>
           );
         })}
       </StatsList>
@@ -34,11 +32,13 @@ const Statistics = ({ title, stats }) => {
 
 Statistics.propTypes = {
   title: PropTypes.string,
-  stats: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    percentage: PropTypes.number.isRequired,
-  }),
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ),
 };
 
 export default Statistics;
