@@ -18,7 +18,10 @@ export default function App() {
         <Statistics title="Upload stats" stats={stats}></Statistics>
       </Section>
 
-      <Section title="3 - Список друзей">123</Section>
+      <Section title="3 - Список друзей">
+
+      </Section>
+
       <Section title="4 - История транзакций">123</Section>
     </Container>
   );
