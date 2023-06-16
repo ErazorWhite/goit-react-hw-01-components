@@ -1,6 +1,7 @@
 import userData from 'json/user';
 import stats from 'json/data';
 import friends from 'json/friends';
+import items from 'json/transactions.json';
 
 import { Container } from 'components/App/App.styled';
 
@@ -8,6 +9,7 @@ import Section from 'components/Section/Section';
 import Profile from 'components/Profile/Profile';
 import Statistics from 'components/Statistics/Statistics';
 import FriendList from 'components/FriendList/FriendList';
+import TransactionHistory from 'components/TransactionHistory/TransactionHistory';
 
 export default function App() {
   return (
@@ -24,7 +26,9 @@ export default function App() {
         <FriendList friends={friends}></FriendList>
       </Section>
 
-      <Section title="4 - История транзакций">123</Section>
+      <Section title="4 - История транзакций">
+        <TransactionHistory items={items}></TransactionHistory>
+      </Section>
     </Container>
   );
 }
