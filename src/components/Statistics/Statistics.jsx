@@ -21,7 +21,7 @@ const Statistics = ({ title, stats }) => {
           return (
             <StatItem key={id} bgcolor={getRandomColor()}>
               <StatSpan margin="0 0 8px 0">{label}</StatSpan>
-              <StatSpan>{percentage}</StatSpan>
+              <StatSpan>{percentage}%</StatSpan>
             </StatItem>
           );
         })}
