@@ -25,7 +25,7 @@ export const StatItem = styled.li`
   padding: 10px;
 
   text-align: center;
-  background-color: ${({color}) => color};
+  background-color: ${({bgcolor}) => bgcolor};
   color: white;
 `;
 

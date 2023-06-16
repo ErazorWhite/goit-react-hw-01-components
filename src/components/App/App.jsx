@@ -1,11 +1,13 @@
 import userData from 'json/user';
 import stats from 'json/data';
+import friends from 'json/friends';
 
 import { Container } from 'components/App/App.styled';
 
-import Profile from 'components/Profile/Profile';
 import Section from 'components/Section/Section';
+import Profile from 'components/Profile/Profile';
 import Statistics from 'components/Statistics/Statistics';
+import FriendList from 'components/FriendList/FriendList';
 
 export default function App() {
   return (
@@ -19,7 +21,7 @@ export default function App() {
       </Section>
 
       <Section title="3 - Список друзей">
-
+        <FriendList friends={friends}></FriendList>
       </Section>
 
       <Section title="4 - История транзакций">123</Section>

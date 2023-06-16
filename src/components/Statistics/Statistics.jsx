@@ -18,7 +18,7 @@ const Statistics = ({ title, stats }) => {
         {stats.map(stat => {
           return (
             <>
-              <StatItem key={stat.id} color={getRandomColor()}>
+              <StatItem key={stat.id} bgcolor={getRandomColor()}>
                 <StatSpan margin="0 0 8px 0">{stat.label}</StatSpan>
                 <StatSpan>{stat.percentage}</StatSpan>
               </StatItem>
