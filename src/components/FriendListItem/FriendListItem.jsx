@@ -10,4 +10,6 @@ const FriendListItem = ({ friends: { avatar, name, isOnline } }) => {
   );
 };
 
+// PropTypes провалидировал на уровень выше во FriendList
+
 export default FriendListItem;

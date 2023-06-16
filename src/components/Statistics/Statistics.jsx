@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { StatsTitle, StatsList, StatItem, StatSpan } from './Statistics.styled';
 
 function getRandomColor() {
@@ -28,6 +30,15 @@ const Statistics = ({ title, stats }) => {
       </StatsList>
     </section>
   );
+};
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+  }),
 };
 
 export default Statistics;
