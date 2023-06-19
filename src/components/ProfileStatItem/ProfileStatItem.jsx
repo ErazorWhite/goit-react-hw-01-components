@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Item, Label, Quantity } from './ProfileStatItem.styled';
 
-const ProfileStatItem = ({ statName, stat }) => {
+const  ProfileStatItem = ({ statName, stat }) => {
   return (
     <Item>
       <Label>{statName}</Label>

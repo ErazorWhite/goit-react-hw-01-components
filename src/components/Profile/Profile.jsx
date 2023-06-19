@@ -11,13 +11,12 @@ import {
 
 const Profile = ({
   avatar = 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png',
-  username = 'Unknown',
-  tag = 'Unknown',
-  location = 'Unknown',
+  username,
+  tag,
+  location,
   stats,
 }) => {
-  const statNames = Object.keys(stats);
-  const statValues = Object.values(stats);
+  const statEntries = Object.entries(stats);
   return (
     <ProfileCard>
       <ProfileDescription>
@@ -28,9 +27,9 @@ const Profile = ({
       </ProfileDescription>
 
       <ProfileStatsList>
-        {statValues.map((stat, id) => {
+        {statEntries.map(([key, value]) => {
           return (
-            <ProfileStatItem key={stat} statName={statNames[id]} stat={stat} />
+            <ProfileStatItem key={key} statName={key} stat={value} />
           );
         })}
       </ProfileStatsList>
@@ -40,14 +39,14 @@ const Profile = ({
 
 Profile.propTypes = {
   avatar: PropTypes.string,
-  username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
   stats: PropTypes.shape({
     followers: PropTypes.number.isRequired,
     views: PropTypes.number.isRequired,
     likes: PropTypes.number.isRequired,
-  }),
+  }).isRequired,
 };
 
 export default Profile;
