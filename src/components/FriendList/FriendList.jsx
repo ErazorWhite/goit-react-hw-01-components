@@ -6,19 +6,18 @@ const FriendList = ({ friends }) => {
   return (
     <List>
       {friends.map(({ id, ...friends }) => {
-        return <FriendListItem key={id} friends={friends}></FriendListItem>;
+        return <FriendListItem key={id} {...friends}></FriendListItem>;
       })}
     </List>
   );
 };
 
 FriendList.propTypes = {
-    friends: PropTypes.arrayOf(PropTypes.shape({
-        avatar: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        isOnline: PropTypes.bool,
-        id: PropTypes.number.isRequired
-  })),
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
 export default FriendList;
